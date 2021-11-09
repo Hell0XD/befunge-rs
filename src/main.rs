@@ -1,13 +1,10 @@
 use std::io::{stdin, Read};
 fn increase_direction(x: &mut usize, y: &mut usize, dir: u8) {
-    if dir == 0 {
-        *x += 1;
-    } else if dir == 1 {
-        *y += 1;
-    } else if dir == 2 {
-        *x -= 1;
-    } else {
-        *y -= 1;
+    match dir {
+        0 => *x += 1,
+        1 => *y += 1,
+        2 => *x -= 1,
+        _ => *y -= 1,
     }
 }
 fn main() {
